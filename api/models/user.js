@@ -10,11 +10,14 @@ const UserSchema = new db.Schema({
         type: Number,
         default: 0
     },
-    lvl: {
-        type: Number,
-        default: 1
+    finish: {
+        type: Date,
+        default: 0
     }
-})
+},
+    {
+        timestamps: true
+    })
 
 const user = db.model("User", UserSchema)
 
