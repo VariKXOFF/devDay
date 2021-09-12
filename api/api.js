@@ -16,7 +16,6 @@ sendError = (res, status, err) => {
 router.post("/", parser, async (req, res) => {
     console.log(req.body);
     await User(req.body).save();
-    res.json({"msg": req.body});
 });
 
 router.post("/update", parser, async (req, res) => {
@@ -24,7 +23,6 @@ router.post("/update", parser, async (req, res) => {
         {email: req.body.email},
         {score: req.body.score},
         {useFindAndModify: false, new: true})
-    res.json({"msg": req.body});
 })
 
 module.exports = router
