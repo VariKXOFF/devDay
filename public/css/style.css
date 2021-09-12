@@ -80,7 +80,8 @@ ul{
 }
 .login__form,
 .task__form,
-.score{
+.score,
+.error{
     width: 350px;
     height: 350px;
     border: 2px solid white;
@@ -97,7 +98,8 @@ ul{
 .login__input-button,
 .task__answer,
 .task__input-button,
-.score__button{
+.score__button,
+.error__button{
     width: 90%;
     height: 52px;
     background: transparent;
@@ -130,13 +132,15 @@ ul{
     font-family: 'Inter', sans-serif;
 }
 .task__input-button,
-.score__button{
+.score__button,
+.error__button{
     margin-top: auto;
     justify-self: self-end;
     transition: 1s;
 }
 .task__input-button:hover,
-.score__button:hover{
+.score__button:hover,
+.error__button:hover{
     color: black;
     background: white;
     box-shadow: 0 0 5px white, 0 0 20px white, 0 0 40px white;
@@ -155,15 +159,18 @@ ul{
     font-weight: bold;
 }
 
-.task__form{
+.task{
     display: none;
 }
 .score{
     display: none;
 }
-/*.login__form{*/
+/*.login{*/
 /*    display: none;*/
 /*}*/
+.error {
+    display: none;
+}
 
 @media (max-width: 768px) {
     .login__form,

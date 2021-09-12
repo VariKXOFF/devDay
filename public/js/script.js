@@ -57,25 +57,37 @@ const updateData = (event) => {
     }
 }
 
-// const checkAnswer = (question, answer, event, error) => {
-//     if(question === question.Array[0]){
-//         if(answer === "1"){
-//             updateData(event)
-//         }
-//     }
-//     if(question === question.Array[1]){
-//         if(answer === "1"){
-//             updateData(event)
-//         }
-//     }
-//     if(question === question.Array[2]){
-//         if(answer === "96"){
-//             updateData(event)
-//         } else {
-//             error()
-//         }
-//     }
-// }
+let errorButton = document.querySelector(".error__button")
+let errorBlock = document.querySelector(".error")
+let loginBlock = document.querySelector(".login")
+let taskBlock = document.querySelector(".task")
+
+const error = (button, error, questionBlock) => {
+    button.addEventListener("click", event => {
+        error.style.display = "none"
+        questionBlock.style.display = "block"
+    })
+}
+
+const checkAnswer = (question, answer, event, error) => {
+    if(question === question.Array[0]){
+        if(answer === "1"){
+            updateData(event)
+        }
+    }
+    if(question === question.Array[1]){
+        if(answer === "1"){
+            updateData(event)
+        }
+    }
+    if(question === question.Array[2]){
+        if(answer === "96"){
+            updateData(event)
+        } else {
+            error()
+        }
+    }
+}
 
 // fetch - на отправку данных
 
@@ -125,8 +137,8 @@ user.addEventListener("submit", event => {
         }
     }
     if(isEmpty(body) === false){
-        user.style.display = "none"
-        answer.style.display = "flex"
+        loginBlock.style.display = "none"
+        taskBlock.style.display = "flex"
         send(body)
     }
 })
