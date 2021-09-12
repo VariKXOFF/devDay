@@ -158,12 +158,12 @@ ul{
 .task__form{
     display: none;
 }
-/*.score{*/
-/*    display: none;*/
-/*}*/
-.login__form{
+.score{
     display: none;
 }
+/*.login__form{*/
+/*    display: none;*/
+/*}*/
 
 @media (max-width: 768px) {
     .login__form,
