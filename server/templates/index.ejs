@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>День программиста</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <video autoplay muted loop class="background-video">
+            <source src="video/videoplayback.mp4" type="video/mp4">
+        </video>
+        <div class="main">
+            <div class="wallpaper">
+                <header class="header">
+                    <nav class="header__navigation">
+                        <a class="header__logo-link" href="https://ithub.ru/">
+                            <img src="img/logoIThub.png" alt="logo" class="header__logo">
+                        </a>
+                        <a href="" class="header__leaderboard-link">
+                            <p class="header__leaderboard-text">Таблица лидеров</p>
+                        </a>
+                    </nav>
+                </header>
+                <ul class="header__lvl-list">
+                    <li class="header__lvl lvl1">1</li>
+                    <li class="header__lvl lvl2">2</li>
+                    <li class="header__lvl lvl3">3</li>
+                    <li class="header__lvl lvl4">4</li>
+                    <li class="header__lvl lvl5">5</li>
+                    <li class="header__lvl lvl6">6</li>
+                    <li class="header__lvl lvl7">7</li>
+                    <li class="header__lvl lvl8">8</li>
+                    <li class="header__lvl lvl9">9</li>
+                    <li class="header__lvl lvl10">10</li>
+                    <li class="header__lvl lvl11">11</li>
+                    <li class="header__lvl lvl12">12</li>
+                    <li class="header__lvl lvl13">13</li>
+                    <li class="header__lvl lvl14">14</li>
+                    <li class="header__lvl lvl15">15</li>
+                    <li class="header__lvl lvl16">16</li>
+                </ul>
+                <div class="form-blocks">
+                    <div class="login">
+                        <form id="loginUser" class="login__form" method="post">
+                            <input name="email" type="email" class="login__input-email" placeholder="E-mail">
+                            <input type="submit" value="Войти" class="login__input-button">
+                        </form>
+                    </div>
+                    <div class="task">
+                        <form id="answerUser" method="post" class="task__form">
+                            <textarea name="answer" cols="30" rows="10" class="task__answer" placeholder="Ответ"></textarea>
+                            <input type="submit" placeholder="Ответить" class="task__input-button">
+                        </form>
+                    </div>
+                    <div class="score">
+                        <div class="score__text-block">
+                            <p class="score__text">Твой результат:</p>
+                            <p class="score__number">100</p>
+                        </div>
+                        <button class="score__button">Дальше</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
