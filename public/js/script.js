@@ -59,13 +59,16 @@ const take = async () => {
             body.score = element.score
             body.question = element.question
             task.innerHTML = element.question
+            let lvl = document.querySelectorAll(".header__lvl")
             if(body.score >= 16){
                 loginBlock.style.display = "none"
                 taskBlock.style.display = "none"
                 score.style.display = "flex"
+                for(let i = 0; i <= body.score; i++){
+                    lvl[i].className += " disable"
+                }
                 // Добавить сохранение финального времени!
             } else {
-                let lvl = document.querySelectorAll(".header__lvl")
                 lvl[body.score].className += " active"
                 loginBlock.style.display = "none"
                 taskBlock.style.display = "flex"
@@ -104,20 +107,6 @@ user.addEventListener("submit", event => {
 })
 
 // Отправка формы для ответа пользователя
-
-const checkAnswer = (question, answer, event) => {
-
-    for(let i = 0; i < questionArray.length; i++){
-        if(question === questionArray[i]){
-            if(answer === answerArray[i]){
-                updateData(event)
-                console.log("Правильно")
-            } else {
-                err(errorBlock, taskBlock)
-            }
-        }
-    }
-}
 const updateData = (event, ele) => {
 
     event.preventDefault()
@@ -162,6 +151,5 @@ const update = async (body) => {
 
 answer.addEventListener("submit", event => {
     let element = document.querySelector(".task__answer")
-    // checkAnswer(task.innerHTML, usans, event)
     updateData(event, element)
 })
