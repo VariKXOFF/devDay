@@ -27,13 +27,15 @@ let errorBlock = document.querySelector(".error")
 let loginBlock = document.querySelector(".login")
 let taskBlock = document.querySelector(".task")
 
-const err = (errorBlock, questionBlock) => {
-    questionBlock.style.display = "none"
+errorButton.addEventListener("click", event => {
+    errorBlock.style.display = "none"
+    taskBlock.style.display = "block"
+    console.log("Click")
+})
+const err = () => {
+    taskBlock.style.display = "none"
     errorBlock.style.display = "flex"
-    errorButton.addEventListener("click", event => {
-        errorBlock.style.display = "none"
-        taskBlock.style.display = "block"
-    })
+    console.log("Ты здесь!")
 }
 
 // fetch - на отправку данных
@@ -70,8 +72,11 @@ const take = async () => {
                 // Добавить сохранение финального времени!
             } else {
                 lvl[body.score].className += " active"
-                loginBlock.style.display = "none"
-                taskBlock.style.display = "flex"
+                if(loginBlock.style.display !== "none"){
+                    loginBlock.style.display = "none"
+                    taskBlock.style.display = "block"
+                    console.log("Это я!")
+                }
                 for(let i = 0; i < body.score; i++){
                     lvl[i].className += " disable"
                 }
@@ -114,13 +119,15 @@ const updateData = (event, ele) => {
         let element = event.target.elements[i]
         if (element.name){
             if(element.value.length !== 0) {
+                let qw = body.question
                 for(let i = 0; i < questionArray.length; i++){
-                    if(body.question === questionArray[i]){
-                        if(ele.value === answerArray[i]){
+                    if(qw === questionArray[i]) {
+                        if (ele.value === answerArray[i]) {
                             body.score++
                             body.question = generateQuestion(userQuestion)
-                        } else {
-                            err(errorBlock, taskBlock)
+                        }
+                        if (ele.value !== answerArray[i]) {
+                            err()
                         }
                     }
                 }

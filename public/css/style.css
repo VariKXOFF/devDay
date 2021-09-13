@@ -4,6 +4,8 @@ body {
     padding: 0;
     color: white;
     font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    max-height: 200vh;
 }
 input,
 textarea{
@@ -35,15 +37,14 @@ ul{
 }
 .main{
     width: 100%;
-    min-height: 100vh;
-    max-width: 100%;
-    padding-bottom: 100px;
+    height: inherit;
 }
 .wallpaper {
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     background: rgba(0,0,0, .7);
     backdrop-filter: blur(1px);
+    padding-bottom: 100px;
 }
 .header {
     width: 100%;
@@ -171,9 +172,6 @@ ul{
 .score{
     display: none;
 }
-/*.login{*/
-/*    display: none;*/
-/*}*/
 .error {
     display: none;
 }
