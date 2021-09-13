@@ -30,18 +30,15 @@ let taskBlock = document.querySelector(".task")
 errorButton.addEventListener("click", event => {
     errorBlock.style.display = "none"
     taskBlock.style.display = "block"
-    console.log("Click")
 })
 const err = () => {
     taskBlock.style.display = "none"
     errorBlock.style.display = "flex"
-    console.log("Ты здесь!")
 }
 
-// fetch - на отправку данных
 
 const send = async(body) => {
-    let res = await fetch("/api", {  // Вставь сюда адрес к папке, которая обрабатывает запросы
+    let res = await fetch("/api", {
         method: "post",
         headers: {
             "Content-Type": "application/json",
@@ -50,7 +47,6 @@ const send = async(body) => {
         body: JSON.stringify(body)
     });
     let data = await res.json();
-    console.log(data);
 }
 
 const take = async () => {
@@ -60,22 +56,26 @@ const take = async () => {
         if(element.email === body.email){
             body.score = element.score
             body.question = element.question
+            body.finish = element.finish
             task.innerHTML = element.question
             let lvl = document.querySelectorAll(".header__lvl")
             if(body.score >= 16){
                 loginBlock.style.display = "none"
                 taskBlock.style.display = "none"
                 score.style.display = "flex"
+                let standart = "1970-01-01T00:00:00.000Z"
+                if(body.finish == standart){
+                    body.finish = element.updatedAt
+                    update(body)
+                }
                 for(let i = 0; i <= body.score; i++){
                     lvl[i].className += " disable"
                 }
-                // Добавить сохранение финального времени!
             } else {
                 lvl[body.score].className += " active"
                 if(loginBlock.style.display !== "none"){
                     loginBlock.style.display = "none"
                     taskBlock.style.display = "block"
-                    console.log("Это я!")
                 }
                 for(let i = 0; i < body.score; i++){
                     lvl[i].className += " disable"
@@ -85,7 +85,6 @@ const take = async () => {
     })
 }
 
-// Отправка формы для входа пользователя
 
 const user = document.forms.loginUser
 
@@ -111,7 +110,6 @@ user.addEventListener("submit", event => {
     }
 })
 
-// Отправка формы для ответа пользователя
 const updateData = (event, ele) => {
 
     event.preventDefault()

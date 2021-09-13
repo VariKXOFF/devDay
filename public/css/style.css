@@ -4,8 +4,6 @@ body {
     padding: 0;
     color: white;
     font-family: 'Inter', sans-serif;
-    min-height: 100vh;
-    max-height: 200vh;
 }
 input,
 textarea{
@@ -28,16 +26,9 @@ ul{
     list-style: none;
     display: flex;
 }
-/*.background-video{*/
-/*    position: fixed;*/
-/*    right: 0;*/
-/*    bottom: 0;*/
-/*    min-width: 100%;*/
-/*    min-height: 100%;*/
-/*}*/
 .main{
     width: 100%;
-    height: inherit;
+    height: 100%;
     background: url("../img/image2.png");
 }
 .wallpaper {
@@ -77,17 +68,18 @@ ul{
 }
 .form-blocks{
     width: 100%;
-    height: calc(100vh - 170px);
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
 }
 .login__form,
 .task__form,
 .score,
 .error{
     width: 350px;
-    height: 450px;
+    height: inherit;
     border: 2px solid white;
     border-radius: 10px;
     display: flex;
@@ -97,6 +89,7 @@ ul{
     gap: 15px;
     padding: 32px 0 24px 0;
     box-sizing: border-box;
+    margin-bottom: 100px;
 }
 .login__input-email,
 .login__input-button,
@@ -163,7 +156,8 @@ ul{
     font-weight: bold;
 }
 .task__text,
-.login__text{
+.login__text,
+.score__text{
     text-align: center;
 }
 
@@ -192,6 +186,7 @@ ul{
     .task__form,
     .score{
         width: 300px;
+        font-size: 14px;
     }
     .form-blocks{
         flex-direction: column;

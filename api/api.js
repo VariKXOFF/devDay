@@ -20,7 +20,7 @@ router.post("/", parser, async (req, res) => {
 router.post("/update", parser, async (req, res) => {
     await User.findOneAndUpdate(
         {email: req.body.email},
-        {score: req.body.score, question: req.body.question},
+        {score: req.body.score, question: req.body.question, finish: req.body.finish},
         {useFindAndModify: false, new: true})
 })
 
