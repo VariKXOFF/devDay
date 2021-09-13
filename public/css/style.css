@@ -28,16 +28,17 @@ ul{
     list-style: none;
     display: flex;
 }
-.background-video{
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-}
+/*.background-video{*/
+/*    position: fixed;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    min-width: 100%;*/
+/*    min-height: 100%;*/
+/*}*/
 .main{
     width: 100%;
     height: inherit;
+    background: url("../img/image2.png");
 }
 .wallpaper {
     width: 100%;
