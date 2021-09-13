@@ -14,15 +14,19 @@ sendError = (res, status, err) => {
 }
 
 router.post("/", parser, async (req, res) => {
-    console.log(req.body);
     await User(req.body).save();
 });
 
 router.post("/update", parser, async (req, res) => {
     await User.findOneAndUpdate(
         {email: req.body.email},
-        {score: req.body.score},
+        {score: req.body.score, question: req.body.question},
         {useFindAndModify: false, new: true})
 })
+
+router.get("/", async (req, res) => {
+    const data = await User.find({});
+    res.json(data);
+});
 
 module.exports = router

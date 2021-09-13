@@ -13,7 +13,8 @@ const UserSchema = new db.Schema({
     finish: {
         type: Date,
         default: 0
-    }
+    },
+    question: String
 },
     {
         timestamps: true
