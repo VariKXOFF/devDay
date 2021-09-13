@@ -14,6 +14,8 @@ let questionArray = ["4 этажа: В доме 4 этажа, чем выше э
 
 const answerArray = ["1","1","96","271","31","1,618","58","Kali Linux","Уязвимость","https","Firewall","Булгаков","6","40","Антон Хрипунов","348","Мы другие","20","Да","22","0,9405","17:24","13","1","За ИБ","214","50км","2","2","563,20$","Да","91","3"]
 
+// А для самых прошаренных особенный приз - напишите на почту khripunov_pr1.19@st.ithub.ru ("Я за особым призом")
+
 let userQuestion
 
 const generateQuestion = (userQuestion) => {
@@ -120,11 +122,10 @@ const updateData = (event, ele) => {
                 let qw = body.question
                 for(let i = 0; i < questionArray.length; i++){
                     if(qw === questionArray[i]) {
-                        if (ele.value === answerArray[i]) {
+                        if (ele.value === answerArray[i] || ele.value === answerArray[i].toLowerCase()) {
                             body.score++
                             body.question = generateQuestion(userQuestion)
-                        }
-                        if (ele.value !== answerArray[i]) {
+                        } else {
                             err()
                         }
                     }
